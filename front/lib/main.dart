@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'PetRegistrationPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -53,14 +54,14 @@ class _MyHomePageState extends State<MyHomePage> {
     );
 
     if (response.statusCode == 201) {
-      // If the server did return a 201 CREATED response,
-      // then parse the JSON.
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Usuário cadastrado com sucesso!')),
       );
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const PetRegistrationPage()),
+      );
     } else {
-      // If the server did not return a 201 CREATED response,
-      // then throw an exception.
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Falha ao cadastrar usuário.')),
       );
