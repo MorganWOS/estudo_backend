@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'home_page.dart';
 
 class PetRegistrationPage extends StatefulWidget {
   const PetRegistrationPage({super.key});
@@ -37,6 +38,10 @@ class _PetRegistrationPageState extends State<PetRegistrationPage> {
     if (response.statusCode == 201) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Pet cadastrado com sucesso!')),
+      );
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const HomePage()),
       );
     } else {
       ScaffoldMessenger.of(

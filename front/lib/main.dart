@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'PetRegistrationPage.dart';
+import 'home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -98,6 +99,16 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: _submitForm,
               child: const Text('Cadastrar'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomePage()),
+                );
+              },
+              child: const Text('Ir para Home'),
             ),
           ],
         ),
