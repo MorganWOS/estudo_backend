@@ -7,45 +7,102 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Home')),
-      body: Center(
+      body: Container(
+        color: Colors.grey[200], // Cor de fundo da tela
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                // Navegar para a tela de Hospedagem
-              },
-              child: const Text('Hospedagem'),
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                'Como vai seu pet?',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                // Navegar para a tela de Passeio
-              },
-              child: const Text('Passeio'),
+            Column(
+              children: [
+                SizedBox(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 8.0,
+                      horizontal: 500.0,
+                    ),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        minimumSize: const Size.fromHeight(
+                          100,
+                        ), // Aumenta a altura do botão
+                      ),
+                      child: const Text('Hospedagem'),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 8.0,
+                      horizontal: 500.0,
+                    ),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        minimumSize: const Size.fromHeight(
+                          100,
+                        ), // Aumenta a altura do botão
+                      ),
+                      child: const Text('Passeio'),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 8.0,
+                      horizontal: 500.0,
+                    ),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.orange,
+                        minimumSize: const Size.fromHeight(
+                          100,
+                        ), // Aumenta a altura do botão
+                      ),
+                      child: const Text('PetSitter'),
+                    ),
+                  ),
+                ),
+              ],
             ),
-            ElevatedButton(
-              onPressed: () {
-                // Navegar para a tela de Pet Sitter
-              },
-              child: const Text('Pet Sitter'),
+            BottomNavigationBar(
+              backgroundColor:
+                  Colors.blue, // Cor de fundo da barra de navegação
+              selectedItemColor:
+                  Colors.green, // Cor dos ícones e textos selecionados
+              unselectedItemColor:
+                  Colors.black, // Cor dos ícones e textos não selecionados
+              items: const [
+                BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+                BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chat'),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.list),
+                  label: 'Pedidos',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person),
+                  label: 'Perfil',
+                ),
+              ],
             ),
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor:
-            Colors.grey[850], // Define a cor de fundo da barra de navegação
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Chat'),
-          BottomNavigationBarItem(icon: Icon(Icons.school), label: 'Serviços'),
-          BottomNavigationBarItem(icon: Icon(Icons.egg), label: 'Perfil'),
-        ],
-        selectedItemColor: Colors.amber[800],
-        unselectedItemColor:
-            Colors.black, // Define a cor dos itens não selecionados
-      ),
-      backgroundColor: Colors.grey, // Define a cor de fundo da tela
     );
   }
 }
