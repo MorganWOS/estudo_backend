@@ -18,3 +18,7 @@ def contar_pares(numeros):
         if num % 2 == 0:
             count += 1
     return count
+
+print(calcular_media([2, 2, 2, 2]))
+print(encontrar_maior([2, 3, 8, 4, 5]))
+print(contar_pares([2, 3, 8, 4, 5]))
