@@ -1,0 +1,1 @@
+Aqui são alguns códigos que estavam quebrados com bugs ou problemas de lógica. Dados por uma IA para que eu possa estudar, resolvendo os problemas.
